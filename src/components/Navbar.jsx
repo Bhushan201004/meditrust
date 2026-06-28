@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import HomePage from "./images/HomePage.png";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [unreadTotal, setUnreadTotal] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  
 
   useEffect(() => {
     const checkHealth = async () => {
@@ -61,7 +63,7 @@ const Navbar = () => {
       <div className="nav-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <Link to="/" className="nav-logo">
-            <img src="src/images/Logo.png" alt="Logo" />
+            <img src="./images/Logo.png" alt="Logo" />
             &nbsp;MEDITRUST
           </Link>
         </div>

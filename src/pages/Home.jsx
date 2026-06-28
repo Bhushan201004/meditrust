@@ -90,22 +90,22 @@ const Home = () => {
                   <p>Dermatologist</p>
                 </div>
                 <div className="patient-card">
-                  <img src="src/images/MaleDoctor.jpg" alt="patient" />
+                  <img src="./images/MaleDoctor.jpg" alt="patient" />
                   <h4>Dr. Rahul Kumar</h4>
                   <p>Neurologist</p>
                 </div>
                 <div className="patient-card">
-                  <img src="src/images/FemaleDoctor.jpg" alt="patient" />
+                  <img src="./images/FemaleDoctor.jpg" alt="patient" />
                   <h4>Dr. Priya </h4>
                   <p>Pediatrician</p>
                 </div>
                 <div className="patient-card">
-                  <img src="src/images/MaleDoctor.jpg" alt="patient" />
+                  <img src="./images/MaleDoctor.jpg" alt="patient" />
                   <h4>Dr. Vikram Kumar</h4>
                   <p>Dentist</p>
                 </div>
                 <div className="patient-card">
-                  <img src="src/images/MaleDoctor.jpg" alt="patient" />
+                  <img src="./images/MaleDoctor.jpg" alt="patient" />
                   <h4>Dr. Karan Kumar</h4>
                   <p>Gastroenterologist</p>
                 </div>
