@@ -5,7 +5,6 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { createServer as createViteServer } from 'vite';
 import dotenv from 'dotenv';
-import { MongoMemoryServer } from 'mongodb-memory-server';
 
 import { createServer } from 'http';
 import { Server } from 'socket.io';
@@ -29,7 +28,7 @@ async function startServer() {
     }
   });
 
-  const PORT = 3000;
+ const PORT = process.env.PORT || 3000;
 
   app.use(cors());
   app.use(express.json());
@@ -51,32 +50,16 @@ async function startServer() {
     });
   });
 
-  let MONGODB_URI = process.env.MONGODB_URI;
+  try {
+  await mongoose.connect(process.env.MONGODB_URI!, {
+    serverSelectionTimeoutMS: 5000,
+  });
 
-  if (!MONGODB_URI) {
-    console.log('No MONGODB_URI found. Starting MongoDB Memory Server for preview...');
-    try {
-      const mongoServer = await MongoMemoryServer.create();
-      MONGODB_URI = mongoServer.getUri();
-      console.log('MongoDB Memory Server started at:', MONGODB_URI);
-    } catch (err) {
-      console.error('Failed to start MongoDB Memory Server:', err);
-    }
-  }
-
-  if (MONGODB_URI) {
-    try {
-      await mongoose.connect(MONGODB_URI, {
-        serverSelectionTimeoutMS: 5000, 
-      });
-      console.log('MongoDB Connected Successfully');
-    } catch (err) {
-      console.error('MongoDB Connection Error:', err);
-    }
-  } else {
-    console.error('No MongoDB connection available. Operations will fail.');
-  }
-
+  console.log("MongoDB Connected Successfully");
+} catch (err) {
+  console.error("MongoDB Connection Error:", err);
+  process.exit(1);
+}
   app.use('/api/auth', authRoutes);
   app.use('/api/patient', patientRoutes);
   app.use('/api/doctor', doctorRoutes);
