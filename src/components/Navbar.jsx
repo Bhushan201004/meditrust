@@ -62,7 +62,7 @@ const Navbar = () => {
       <div className="nav-container">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <Link to="/" className="nav-logo">
-            <img src="public/images/Logo.png" alt="Logo" />
+            <img src="/images/Logo.png" alt="Logo" />
             &nbsp;MEDITRUST
           </Link>
         </div>
