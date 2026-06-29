@@ -77,7 +77,7 @@ const AppointmentPage = () => {
       <div className="grid-3">
         {doctors.map(doc => (
           <div key={doc._id} className="A-card doctor-card">
-            <img src="src/images/MaleDoctor.jpg"/>
+            <img src="/images/MaleDoctor.jpg"/>
             <h3>Dr. {doc.fullName}</h3>
             <p style={{ color: 'var(--primary)', fontWeight: '600' }}>{doc.specialization}</p>
             <p style={{ fontSize: '0.9rem', color: 'var(--gray)' }}>{doc.hospitalName}</p>
