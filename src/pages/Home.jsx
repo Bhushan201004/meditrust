@@ -50,7 +50,7 @@ const Home = () => {
 
       <section className="hero">
         <div className="hero-content">
-          <h1>MEDI</h1>
+          <h1>MEDITRUST</h1>
           <p><b> It's Trusted Healthcare Records System,</b> Manage appointments, medical history, and records in one secure place.</p>
           <button onClick={handleBookClick} className="btn btn-Color">Book Appointment</button>
         </div>
